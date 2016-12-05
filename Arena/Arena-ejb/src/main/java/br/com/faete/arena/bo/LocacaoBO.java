@@ -5,6 +5,8 @@
  */
 package br.com.faete.arena.bo;
 
+import br.com.faete.marcos.modelo.modelos.Locacao;
+import br.com.faete.arena.dao.CampoDAO;
 import br.com.faete.arena.dao.LocacaoDAO;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -17,12 +19,31 @@ import javax.ejb.Stateless;
 public class LocacaoBO {
     
     @EJB
-    private LocacaoDAO locacaoDAO;
-
-    public LocacaoDAO getLocacaoDAO() {
-        return locacaoDAO;
-    }
+    private LocacaoDAO  locacaoDAO;
+    @EJB
+    private CampoDAO      campoDAO;
     
+   
     
+    public Locacao locar(Locacao locacao) throws Exception {
+        if (locacao == null) {
+            throw new Exception("Locação não pode ser nula!");
+        }
+        
+        if (locacao.getCpfCliente() == null || locacao.getCpfCliente().isEmpty()) {
+            throw new Exception("Locação deve ter o CPF do cliente informado!");
+        }
+        
+        if (locacao.getCamposLocados() == null
+                || locacao.getCamposLocados().isEmpty()) {
+            throw new Exception("Locação deve possuir pelo menos um horario reservado!");
+        }
+        
+       
+        
+        locacaoDAO.salvar(locacao);
+        
+        return locacao;
+}
     
 }

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:x="http://xpert.com/faces"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        <h2>Aluguel de Campo de Futebol!!</h2>
+
+        <h:form>
+            <p:outputLabel value="Nome" />
+            <p:inputText />
+            
+            <p:growl id="msgs" showDetail="true" />
+ 
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:outputLabel for="inline" value="Inline:" />
+            <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
+            
+            
+               
+            
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
+

@@ -5,7 +5,7 @@
  */
 package br.com.faete.arena.dao;
 
-import br.com.faete.arena.core.modelo.Locacao;
+import br.com.faete.marcos.modelo.modelos.Locacao;
 import javax.ejb.Stateless;
 
 /**
@@ -14,10 +14,10 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class LocacaoDAO extends BaseDAO{
-    
+
     @Override
-    public Class getClassUnit(){
-        return Locacao.class;
+    public Class getClassNome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

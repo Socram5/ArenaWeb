@@ -1,1 +1,8 @@
-br\com\faete\marcos\modelo\NewSessionBean.class
+br\com\faete\arena\dao\LocacaoDAO.class
+br\com\faete\arena\dao\PagamentoDAO.class
+br\com\faete\arena\bo\CampoBO.class
+br\com\faete\arena\bo\FuncionarioBO.class
+br\com\faete\arena\dao\CampoDAO.class
+br\com\faete\arena\bo\LocacaoBO.class
+br\com\faete\arena\dao\BaseDAO.class
+br\com\faete\arena\dao\FuncionarioDAO.class

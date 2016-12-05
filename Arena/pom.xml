@@ -10,5 +10,6 @@
     <module>Arena-ear</module>
     <module>Arena-web</module>
     <module>Arena-ejb</module>
+    <module>Modelos</module>
   </modules>
 </project>
