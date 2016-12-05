@@ -8,6 +8,7 @@ package br.com.faete.arena.core.modelo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -61,6 +62,22 @@ public class Locacao implements Serializable{
 
     public void setValorLocacao(BigDecimal valorLocacao) {
         this.valorLocacao = valorLocacao;
+    }
+
+    public Object getCpfCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Iterable<Campo> getCamposLocados() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getCampoLocados() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCampoLocados(HashSet<Campo> hashSet) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 

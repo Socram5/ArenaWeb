@@ -62,6 +62,10 @@ public class Campo implements Serializable{
     public void setTipoCampo(TipoCampo tipoCampo) {
         this.tipoCampo = tipoCampo;
     }
+
+    public Object getTamanho() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
