@@ -6,8 +6,8 @@
 package br.com.faete.marcos.modelo;
 
 import br.com.faete.arena.bo.LocacaoBO;
-import br.com.faete.arena.core.modelo.Campo;
-import br.com.faete.arena.core.modelo.Locacao;
+import br.com.faete.marcos.modelo.modelos.Campo;
+import br.com.faete.marcos.modelo.modelos.Locacao;
 import java.io.Serializable;
 import java.util.HashSet;
 import javax.ejb.EJB;
@@ -28,8 +28,8 @@ public class LocacaoMB implements Serializable{
     private LocacaoBO locacaoBO;
     
     public void adicionarCampo(Campo campo){
-        if (locacao.getCampoLocados() == null){
-            locacao.setCampoLocados(new HashSet<Campo>());
+        if (locacao.getCamposLocados() == null){
+            locacao.setCamposLocados(new HashSet<Campo>());
             
         }
     }

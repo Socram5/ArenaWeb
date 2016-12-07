@@ -5,28 +5,29 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:p="http://primefaces.org/ui"
     xmlns:x="http://xpert.com/faces"
+    template="./templates/template.xhtml"
     xmlns:f="http://java.sun.com/jsf/core">
 
     <ui:define name="content">
-        <h2>Aluguel de Campo de Futebol!!</h2>
+        <h2>Locacao de Campos</h2>
 
         <h:form>
-            <p:outputLabel value="Nome" />
-            <p:inputText />
-            
-            <p:growl id="msgs" showDetail="true" />
- 
-        <h:panelGrid columns="2" cellpadding="5">
-            <p:outputLabel for="inline" value="Inline:" />
-            <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
-            
-            
-               
-            
+            <p:growl showSummary="true" showDetail="true"
+                     sticky="true"/>
+
+            <p:dataTable value="#{locacaoMB.locacao.listCampos}" 
+                         paginator="true"
+                         paginatorPosition="bottom"
+                         rows="5"
+                         emptyMessage="Nenhum cadastro encontrado!"
+                         var="i">
+                <p:column>
+                    #{i.tamanho}
+                </p:column>
+            </p:dataTable>
         </h:form>
 
 
     </ui:define>
 
 </ui:composition>
-

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:x="http://xpert.com/faces"
+    template="./templates/template.xhtml"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        <h2>Listagem de CampoReservados</h2>
+
+        <h:form>
+            <p:growl showSummary="true" showDetail="true"
+                     sticky="true"/>
+            <h:inputHidden value="#{campoMB.campo.id}"/>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Tamanho:  " />
+                <p:inputText value="#{campoMB.campo.tamanho}" />
+                <h:outputLabel value="Valor do Horario:  " />
+                <p:inputText value="#{campoMB.campo.valorHorario}" />
+                <h:outputLabel value="Horario Inicial:  " />
+                <p:inputText value="#{campoMB.campo.horarioInicio}" />
+                <h:outputLabel value="Horario Final:  " />
+                <x:inputNumber value="#{campoMB.campo.horarioFinal}" />
+            </h:panelGrid>
+            <center>
+                <p:button outcome="campo" value="Novo" />
+                <p:commandButton value="Salvar" 
+                                 action="#{campoMB.salvar()}"
+                                 process="@form"
+                                 update="@form"
+                                 />
+            </center>
+            <br/>
+            <p:dataTable value="#{campoMB.campos}" 
+                         paginator="true"
+                         paginatorPosition="bottom"
+                         rows="5"
+                         emptyMessage="Nenhum cadastro encontrado!"
+                         var="i">
+                <f:facet name="header">
+                    Campos Cadastrados
+                </f:facet>
+                <p:column>
+                    #{i.id}
+                </p:column>
+                <p:column headerText="Tamanho">
+                    #{i.tamanho}                   
+                </p:column>
+                <p:column headerText="Valor do Horario:">
+                    #{i.valorHorario}                   
+                </p:column>
+                <p:column headerText="Ações">
+                    <p:commandButton icon="ui-icon-gear" 
+                                     process="@this"
+                                     update="@form">
+                        <f:setPropertyActionListener
+                            target="#{campoMB.campo}"
+                            value="#{i}"/>
+                    </p:commandButton>
+                     <p:commandButton icon="ui-icon-plus" 
+                                     process="@this"
+                         update="@form"
+                         action="#{locacaoMB.adicionarCampo(i)}">
+                     </p:commandButton>
+                </p:column>
+            </p:dataTable>
+
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
